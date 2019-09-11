@@ -128,6 +128,22 @@ object EitherTRunner extends App {
   println(toResult)
 
 
+  /**
+  * collectRight
+    */
+  val collectRightEitherT: EitherT[List, String, Int] = EitherT[List, String, Int](List(Right(123), Left("abc")))
+  val collectRightResult: List[Int] = collectRightEitherT.collectRight
+  println(collectRightResult)
+
+  /**
+  * bimap
+    */
+
+  val bimapEitherT: EitherT[List, String, Int] = EitherT[List, String, Int](List(Right(123), Left("abc")))
+  val bimapResult: EitherT[List, Int, Int] = bimapEitherT.bimap(string => string.length, int => int % 100)
+  println(bimapResult)
+
+
 
 
 
