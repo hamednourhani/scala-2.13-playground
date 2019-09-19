@@ -12,7 +12,11 @@ lazy val root = (project in file("."))
       catsCore,
       catsEffect,
       catsMtl,
-      catsMouse
+      catsMouse,
+      scalactic,
+      scalatest,
+      scalaCheck,
+      zio
     ),
     resolvers ++= Seq(Resolver.sonatypeRepo("releases"), Resolver.sonatypeRepo("snapshots")),
   )
